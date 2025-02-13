@@ -93,6 +93,8 @@
 &trans  &trans  &trans           &trans       &trans  &trans    &trans  &trans    &trans    &trans        &trans     &trans
 &trans  &trans  &trans           &trans       &trans  &trans    &trans  &trans                                       &trans
             >;
+
+            sensor-bindings = <&horizontal_scroll>;
         };
 
         layer_4 {
