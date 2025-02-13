@@ -48,10 +48,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R               &kp T                                                   &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F               &kp G        &none               &kp BACKSPACE          &kp H        &kp J  &kp K      &kp L    &kp SEMI
-&kp Z      &kp X         &kp C         &kp V               &kp B        &lt 4 MINUS         &kp LEFT_BRACKET       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_MUHENKAN  &lt 1 SPACE  &lt 3 INT_HENKAN    &mt LEFT_SHIFT ESCAPE  &lt 1 ENTER                             &kp RCTRL
+&kp Q      &kp W         &kp E         &kp R             &kp T                                                   &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE          &kp H        &kp J  &kp K      &kp L    &kp SEMI
+&kp Z      &kp X         &kp C         &kp V             &kp B        &lt 4 MINUS         &kp LEFT_BRACKET       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT ESCAPE  &lt 1 ENTER                             &kp RCTRL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -70,7 +70,7 @@
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans  &trans  &trans  &trans  &trans                    &kp AT  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                        &trans
@@ -79,10 +79,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans    &trans    &trans        &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                       &trans
+&trans  &trans  &trans           &trans       &trans                    &trans    &trans    &trans        &trans     &trans
+&trans  &trans  &kp LS(LC(TAB))  &kp LC(TAB)  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans  &trans           &trans       &trans  &trans    &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans  &trans           &trans       &trans  &trans    &trans  &trans                                       &trans
             >;
         };
 
