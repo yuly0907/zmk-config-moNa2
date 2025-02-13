@@ -41,6 +41,15 @@
 
             tap-ms = <20>;
         };
+
+        horizontal_scroll: horizontal_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "HORIZONTAL_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -59,10 +68,10 @@
 
         layer_1 {
             bindings = <
-&trans        &kp N7        &kp N8        &kp N9        &trans                    &trans  &mkp MB4  &trans    &mkp MB5  &trans
-&kp LC(TAB)   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans                                &trans
+&trans        &kp N7        &kp N8        &kp N9        &trans                    &trans  &mkp MB4         &trans    &mkp MB5     &trans
+&kp LC(TAB)   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans    &trans  &trans  &mkp MB1         &mkp MB3  &mkp MB2     &trans
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans    &trans  &trans  &kp LS(LC(TAB))  &trans    &kp LC(TAB)  &trans
+&trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans                                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
