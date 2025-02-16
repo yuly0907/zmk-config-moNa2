@@ -39,6 +39,12 @@
             key-positions = <0 1>;
             layers = <0>;
         };
+
+        altf4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <3 36>;
+            layers = <0>;
+        };
     };
 
     macros {
