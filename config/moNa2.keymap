@@ -122,7 +122,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_3 {
+        SNIPE {
             bindings = <
 &kp LS(PRINTSCREEN)  &trans           &trans           &trans       &trans                         &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &trans
 &trans               &kp LA(LS(TAB))  &kp LS(LC(TAB))  &kp LC(TAB)  &kp LA(TAB)  &trans    &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
