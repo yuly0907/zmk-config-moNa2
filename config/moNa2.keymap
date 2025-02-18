@@ -6,7 +6,6 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define SNIPE 3
-#define MOUSE 6
 
 &mt {
     flavor = "balanced";
