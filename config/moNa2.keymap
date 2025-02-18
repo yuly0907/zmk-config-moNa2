@@ -93,7 +93,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                   &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE          &kp H        &kp J  &kp K      &kp L    &lt 5 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 4 AT            &kp MINUS              &kp N        &kp M  &kp COMMA  &kp DOT  &kp COLON
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 4 MINUS         &kp EQUAL              &kp N        &kp M  &kp COMMA  &kp DOT  &kp COLON
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT ESCAPE  &lt 1 ENTER                             &kp SLASH
             >;
 
@@ -116,7 +116,7 @@
 &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                           &kp HASH       &kp EXCL       &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans    &kp CARET     &kp AMPERSAND  &kp QUESTION   &kp SINGLE_QUOTE   &kp LEFT_BRACE        &kp RIGHT_BRACE
 &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans    &kp ASTERISK  &kp PERCENT    &kp BACKSLASH  &kp GRAVE          &kp LEFT_BRACKET      &kp RIGHT_BRACKET
-&trans   &trans   &trans   &trans   &trans   &trans    &kp TILDE     &trans                                                                 &trans
+&trans   &trans   &trans   &trans   &trans   &trans    &kp TILDE     &kp AT                                                                 &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
