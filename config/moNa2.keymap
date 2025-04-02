@@ -46,7 +46,7 @@
         };
 
         toO24 {
-            bindings = <&to 7>;
+            bindings = <&to 1>;
             key-positions = <8 9>;
             layers = <0>;
         };
@@ -54,7 +54,7 @@
         toDef {
             bindings = <&to 0>;
             key-positions = <8 9>;
-            layers = <7>;
+            layers = <1>;
         };
     };
 
@@ -101,13 +101,22 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE       &kp H        &kp J  &kp K      &kp L    &lt 1 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 4 MINUS         &kp EQUAL           &kp N        &kp M  &kp COMMA  &kp DOT  &lt 5 COLON
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 1 ENTER                             &kp SLASH
+&kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y        &kp U  &lt 6 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE       &kp H        &kp J  &kp K      &kp L    &lt 2 SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 5 MINUS         &kp EQUAL           &kp N        &kp M  &kp COMMA  &kp DOT  &lt 6 COLON
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                             &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_7 {
+            bindings = <
+&kp Q             &kp L         &kp U         &kp COMMA         &kp DOT                                              &kp F        &kp W  &lt 0 R  &kp Y  &kp P
+&kp E             &kp I         &kp A         &kp O             &kp SEMI     &none               &kp BACKSPACE       &kp K        &kp T  &kp N    &kp S  &lt 2 H
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 5 MINUS         &kp EQUAL           &kp G        &kp D  &kp M    &kp J  &lt 0 B
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                         &kp SLASH
+            >;
         };
 
         layer_1 {
@@ -174,15 +183,6 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
-        };
-
-        layer_7 {
-            bindings = <
-&kp Q             &kp L         &kp U         &kp COMMA         &kp DOT                                              &kp F        &kp W  &lt 0 R  &kp Y  &kp P
-&kp E             &kp I         &kp A         &kp O             &kp SEMI     &none               &kp BACKSPACE       &kp K        &kp T  &kp N    &kp S  &lt 1 H
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 4 MINUS         &kp EQUAL           &kp G        &kp D  &kp M    &kp J  &lt 0 B
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 1 ENTER                         &kp SLASH
-            >;
         };
     };
 };
