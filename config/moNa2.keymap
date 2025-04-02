@@ -44,6 +44,18 @@
             key-positions = <3 36>;
             layers = <0>;
         };
+
+        toO24 {
+            bindings = <&to 7>;
+            key-positions = <8 9>;
+            layers = <0>;
+        };
+
+        toDef {
+            bindings = <&to 0>;
+            key-positions = <8 9>;
+            layers = <7>;
+        };
     };
 
     macros {
