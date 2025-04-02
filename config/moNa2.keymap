@@ -44,18 +44,6 @@
             key-positions = <3 36>;
             layers = <0>;
         };
-
-        toO24 {
-            bindings = <&to 5>;
-            key-positions = <8 9>;
-            layers = <1>;
-        };
-
-        toQWERTY {
-            bindings = <&to 0>;
-            key-positions = <8 9>;
-            layers = <5>;
-        };
     };
 
     macros {
@@ -156,10 +144,10 @@
 
         layer_5 {
             bindings = <
-&kp Q             &kp L         &kp U         &kp COMMA         &kp DOT                                              &kp F        &kp W  &lt 5 R  &kp Y  &kp P
-&kp E             &kp I         &kp A         &kp O             &kp SEMI     &none               &kp BACKSPACE       &kp K        &kp T  &kp N    &kp S  &lt 1 H
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 4 MINUS         &kp EQUAL           &kp G        &kp D  &kp M    &kp J  &lt 5 B
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 1 ENTER                         &kp SLASH
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -174,6 +162,15 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_7 {
+            bindings = <
+&kp Q             &kp L         &kp U         &kp COMMA         &kp DOT                                              &kp F        &kp W  &lt 0 R  &kp Y  &kp P
+&kp E             &kp I         &kp A         &kp O             &kp SEMI     &none               &kp BACKSPACE       &kp K        &kp T  &kp N    &kp S  &lt 1 H
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 4 MINUS         &kp EQUAL           &kp G        &kp D  &kp M    &kp J  &lt 0 B
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 1 ENTER                         &kp SLASH
+            >;
         };
     };
 };
