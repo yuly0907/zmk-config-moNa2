@@ -18,31 +18,31 @@
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <19 18>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <19 20>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         tab2 {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         altf4 {
             bindings = <&kp LA(F4)>;
             key-positions = <3 36>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         toO24 {
