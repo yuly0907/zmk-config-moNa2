@@ -103,7 +103,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y        &kp U  &lt 6 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE       &kp H        &kp J  &kp K      &kp L    &lt 2 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 5 MINUS         &kp EQUAL           &kp N        &kp M  &kp COMMA  &kp DOT  &lt 6 SINGLE_QUOTE
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 5 MINUS         &kp LS(EQUAL)       &kp N        &kp M  &kp COMMA  &kp DOT  &lt 6 SINGLE_QUOTE
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                             &kp SLASH
             >;
 
@@ -114,7 +114,7 @@
             bindings = <
 &kp Q             &kp L         &kp U         &kp COMMA         &kp DOT                                                &kp F        &kp W  &lt 0 R  &kp Y  &kp P
 &kp E             &kp I         &kp A         &kp O             &kp MINUS    &none                 &kp BACKSPACE       &kp K        &kp T  &kp N    &kp S  &lt 2 H
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 5 SINGLE_QUOTE    &kp EQUAL           &kp G        &kp D  &kp M    &kp J  &lt 6 B
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp COLON    &lt 5 SINGLE_QUOTE    &kp LS(MINUS)       &kp G        &kp D  &kp M    &kp J  &lt 6 B
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1      &mt LEFT_SHIFT TAB  &lt 2 ENTER                         &kp SLASH
             >;
         };
