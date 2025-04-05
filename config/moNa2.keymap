@@ -30,19 +30,19 @@
         tab2 {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         altf4 {
             bindings = <&kp LA(F4)>;
             key-positions = <3 36>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         toO24 {
