@@ -152,10 +152,10 @@
 
         SNIPE {
             bindings = <
-&kp LS(PRINTSCREEN)  &trans           &trans           &trans       &trans                         &kp HOME      &kp LC(LEFT)  &kp LC(RIGHT)     &kp END        &trans
-&trans               &kp LA(LS(TAB))  &kp LS(LC(TAB))  &kp LC(TAB)  &kp LA(TAB)  &trans    &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
-&trans               &trans           &trans           &trans       &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)  &kp LS(RIGHT)  &trans
-&trans               &trans           &trans           &trans       &trans       &trans    &trans  &kp LEFT_GUI                                                 &trans
+&kp PRINTSCREEN  &trans  &trans  &trans  &trans                        &kp HOME      &kp LC(LEFT)  &kp LC(RIGHT)     &kp END        &trans
+&trans           &trans  &trans  &trans  &trans  &trans        &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
+&trans           &trans  &trans  &trans  &trans  &kp K_LOCK    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)  &kp LS(RIGHT)  &trans
+&trans           &trans  &trans  &trans  &trans  &trans        &trans  &kp LEFT_GUI                                                 &trans
             >;
 
             sensor-bindings = <&horizontal_scroll>;
