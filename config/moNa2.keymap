@@ -82,7 +82,11 @@
         open_notepad: open_notepad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp ENTER>;
+            bindings =
+                <&kp LG(R)>,
+                <&macro_wait_time 1>,
+                <&kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp ENTER>;
+
             label = "OPEN_NOTEPAD";
         };
     };
