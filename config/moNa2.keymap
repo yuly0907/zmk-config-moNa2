@@ -72,6 +72,13 @@
             bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kt LEFT_ALT>;
             label = "NEW_MACRO";
         };
+
+        open_notepad: open_notepad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(R) &kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp ENTER>;
+            label = "OPEN_NOTEPAD";
+        };
     };
 
     behaviors {
@@ -152,10 +159,10 @@
 
         SNIPE {
             bindings = <
-&kp PRINTSCREEN  &trans  &trans               &trans                &trans                       &kp HOME      &kp LC(LEFT)  &kp LC(RIGHT)     &kp END        &trans
-&trans           &trans  &kp C_AL_CALCULATOR  &kp C_AL_TEXT_EDITOR  &trans  &trans       &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
-&trans           &trans  &trans               &trans                &trans  &kp LG(L)    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)  &kp LS(RIGHT)  &trans
-&trans           &trans  &trans               &trans                &trans  &trans       &trans  &kp LEFT_GUI                                                 &trans
+&kp PRINTSCREEN  &trans  &trans               &kp LA(F4)     &trans                       &kp HOME      &kp LC(LEFT)  &kp LC(RIGHT)     &kp END        &trans
+&trans           &trans  &kp C_AL_CALCULATOR  &open_notepad  &trans  &trans       &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
+&trans           &trans  &trans               &trans         &trans  &kp LG(L)    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)  &kp LS(RIGHT)  &trans
+&trans           &trans  &trans               &trans         &trans  &trans       &trans  &kp LEFT_GUI                                                 &trans
             >;
 
             sensor-bindings = <&horizontal_scroll>;
