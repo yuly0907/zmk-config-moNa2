@@ -26,7 +26,6 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            // Layer 0 は QWERTY_US で維持されるため、&to 0 は変更なし
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
@@ -54,8 +53,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            // Layer 0 は QWERTY_US で維持されるため、&to 0 は変更なし
-            bindings = <&mo 0>, <&to_layer_0>; // &mo にレイヤー番号を追加
+            bindings = <&mo 0>, <&to_layer_0>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -116,18 +114,30 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        JIS_SYMBOLS { // Layer 3 (元の layer_2 をリネーム)
+        JIS_SYMBOLS { // Layer 3 (元の layer_2 をリネームし、画像に合わせて修正)
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp HASH          &kp EXCL   &kp LS(NUMBER_2)      &kp LS(NUMBER_8)      &kp LS(N9)
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp EQUAL         &kp LS(NUMBER_6)  &kp QMARK  &kp LS(N7)            &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15 &trans    &kp DOLLAR        &kp PERCENT       &kp INT1   &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACKET      &kp NUHS
-&trans   &trans   &trans   &trans   &trans  &trans    &kp LS(EQUAL)     &kp LEFT_BRACKET                                                     &kp LS(INT3)
+// 左手側のFキー部分 (元の配置を維持)
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans
+// 右手側の記号部分 (画像に合わせて修正)
+                                      &kp HASH          &kp EXCL   &kp DQT           &kp LS(NUMBER_8)      &kp LS(N9)    &trans
+// 左手側のFキー部分 (元の配置を維持)
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
+// 右手側の記号部分 (画像に合わせて修正)
+                                      &kp CARET         &kp LS(N7) &kp QMARK         &kp SINGLE_QUOTE      &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET)
+// 左手側のFキー部分 (元の配置を維持)
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans
+// 右手側の記号部分 (画像に合わせて修正)
+                                      &kp PERCENT       &kp INT1   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp NUHS      &trans
+// 左手側のトランスミット (元の配置を維持)
+&trans   &trans   &trans   &trans   &trans   &trans
+// 右手側の記号部分 (画像に合わせて修正)
+                                      &kp TILDE         &kp AT     &kp LS(MINUS)     &trans                &trans        &kp LS(INT3)
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        US_SYMBOLS { // Layer 4 (新しく作成するUS記号レイヤー)
+        US_SYMBOLS { // Layer 4 (新しく作成したUS記号レイヤー)
             bindings = <
 &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp LS(N7)        &kp LS(N8)  &kp LS(N9)        &kp LS(N0)        &kp LS(MINUS) // & * ( ) _
 &kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5) // ! @ # $ %
@@ -138,7 +148,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        SNIPE { // Layer 5 (元の SNIPE, #define SNIPE 3 から 5 に更新)
+        SNIPE { // Layer 5 (元の SNIPE)
             bindings = <
 &kp PRINTSCREEN  &kp LG(N7)          &kp LG(N8)          &kp LG(N9)          &kp LA(F4)                       &kp HOME    &kp LC(LEFT)  &kp LC(RIGHT)       &kp END          &trans
 &open_notepad    &kp LG(NUMBER_4)    &kp LG(N5)          &kp LG(NUMBER_6)    &trans      &trans          &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW        &kp RIGHT        &trans
