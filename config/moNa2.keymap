@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define SNIPE 5 // レイヤー番号が変更されたため、5に更新
+#define SNIPE 5 // レイヤー番号は5で変更なし
 
 &mt {
     flavor = "balanced";
@@ -83,9 +83,13 @@
 
         QWERTY_US { // Layer 0
             bindings = <
-&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+// Row 0 (QWERTY)
+&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P    &trans
+// Row 1 (ASDF)
 &kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 4 SEMI // US_SYMBOLS (Layer 4)へ
+// Row 2 (ZXCV)
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp UNDER        &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 COLON // layer_5 (空)へ
+// Row 3 (Modifiers + Space/Enter)
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 4 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 4 ENTER                            &kp SLASH
             >;
 
@@ -94,9 +98,13 @@
 
         QWERTY_JIS { // Layer 1
             bindings = <
-&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+// Row 0 (QWERTY)
+&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P    &trans
+// Row 1 (ASDF)
 &kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 3 SEMI // JIS_SYMBOLS (Layer 3)へ
+// Row 2 (ZXCV)
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp LS(INT1)     &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 SINGLE_QUOTE // layer_5 (空)へ
+// Row 3 (Modifiers + Space/Enter)
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 3 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 3 ENTER                            &kp SLASH
             >;
 
@@ -105,10 +113,14 @@
 
         layer_1 { // Layer 2 (元の layer_1)
             bindings = <
-&trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans
+// Row 0
+&trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans &trans
+// Row 1
 &kp N0  &kp NUMBER_4    &kp N5          &kp NUMBER_6    &kp MINUS                   &trans          &kp DELETE &kp PAGE_UP    &mkp MB1          &mkp MB3 &mkp MB2      &trans
+// Row 2
 &trans  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp LS(SINGLE_QUOTE)        &trans          &trans     &kp PAGE_DOWN  &kp LS(LC(TAB))   &trans    &kp LC(TAB)  &trans
-&trans  &trans          &trans          &trans          &trans                      &kp LS(MINUS)   &trans     &kp LEFT_WIN                                    &trans
+// Row 3
+&trans  &trans          &trans          &trans          &trans                      &kp LS(MINUS)   &trans     &kp LEFT_WIN                                    &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -116,22 +128,14 @@
 
         JIS_SYMBOLS { // Layer 3 (元の layer_2 をリネームし、画像に合わせて修正)
             bindings = <
-// 左手側のFキー部分 (元の配置を維持)
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans
-// 右手側の記号部分 (画像に合わせて修正)
-                                      &kp HASH          &kp EXCL   &kp DQT           &kp LS(NUMBER_8)      &kp LS(N9)    &trans
-// 左手側のFキー部分 (元の配置を維持)
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
-// 右手側の記号部分 (画像に合わせて修正)
-                                      &kp CARET         &kp LS(N7) &kp QMARK         &kp SINGLE_QUOTE      &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET)
-// 左手側のFキー部分 (元の配置を維持)
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans
-// 右手側の記号部分 (画像に合わせて修正)
-                                      &kp PERCENT       &kp INT1   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp NUHS      &trans
-// 左手側のトランスミット (元の配置を維持)
-&trans   &trans   &trans   &trans   &trans   &trans
-// 右手側の記号部分 (画像に合わせて修正)
-                                      &kp TILDE         &kp AT     &kp LS(MINUS)     &trans                &trans        &kp LS(INT3)
+// Row 0 (F1-F5 on left, # ! " ( ) on right) - 12キー
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans         &kp HASH          &kp EXCL   &kp DQT           &kp LS(NUMBER_8)      &kp LS(N9)    &trans
+// Row 1 (F6-F10 on left, ^ & ? ' { } on right) - 12キー
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans         &kp CARET         &kp LS(N7) &kp QMARK         &kp SINGLE_QUOTE      &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET)
+// Row 2 (F11-F15 on left, % \ [ ] _ \ on right) - 12キー
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans         &kp PERCENT       &kp INT1   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LS(MINUS) &kp NUHS
+// Row 3 (Bottom row modifiers, ~ @ | on right) - 12キー
+&trans   &trans   &trans   &trans   &trans   &trans         &kp TILDE         &kp AT     &trans            &trans                &trans        &kp LS(INT3)
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -139,12 +143,15 @@
 
         US_SYMBOLS { // Layer 4 (新しく作成したUS記号レイヤー)
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp LS(N7)        &kp LS(N8)  &kp LS(N9)        &kp LS(N0)        &kp LS(MINUS) // & * ( ) _
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5) // ! @ # $ %
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15 &trans    &kp LS(EQUAL)     &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LS(BACKSLASH) &kp LS(SEMI) // + { } | :
-&trans   &trans   &trans   &trans   &trans  &trans    &kp LS(SINGLE_QUOTE) &kp LS(COMMA)     &kp LS(DOT)       &kp LS(SLASH)     &trans // " < > ?
+// Row 0: F1-F5 on left, then standard US shifted top row digits - 12キー
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans         &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5)    &kp LS(N6) // ! @ # $ % ^
+// Row 1: F6-F10 on left, then standard US shifted home row - 12キー
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans         &kp LS(N7)        &kp LS(N8)  &kp LS(N9)        &kp LS(N0)        &kp LS(MINUS) &kp LS(EQUAL) // & * ( ) _ +
+// Row 2: F11-F15 on left, then standard US shifted bottom alphanumeric row and right modifiers - 12キー
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans         &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LS(BACKSLASH) &kp LS(SEMI) &kp LS(SINGLE_QUOTE) &kp LS(COMMA) // { } | : " <
+// Row 3: Bottom row modifiers, then more standard US shifted symbols - 12キー
+&trans   &trans   &trans   &trans   &trans   &trans         &kp LS(DOT)       &kp LS(SLASH)     &kp LS(GRAVE)     &trans            &trans        &trans // > ? ~
             >;
-
             sensor-bindings = <&scroll_up_down>;
         };
 
@@ -172,10 +179,10 @@
 
         layer_5 { // Layer 7 (元の layer_5 - 空のレイヤー)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -183,10 +190,10 @@
 
         MOUSE { // Layer 8 (元の MOUSE)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans    &trans    &trans    &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
