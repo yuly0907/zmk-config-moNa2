@@ -81,89 +81,89 @@
     keymap {
         compatible = "zmk,keymap";
 
-        QWERTY_US {
+        QWERTY_US { // This will be Layer 0
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y        &kp U  &lt 6 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE       &kp H        &kp J  &kp K      &kp L    &lt 2 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 5 MINUS         &kp UNDER           &kp N        &kp M  &kp COMMA  &kp DOT  &lt 6 COLON
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                             &kp SLASH
+&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 6 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 2 SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 5 MINUS       &kp UNDER        &kp N      &kp M  &kp COMMA  &kp DOT  &lt 6 COLON
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                            &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        QWERTY_JIS {
+        QWERTY_JIS { // This will be Layer 1
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y        &kp U  &lt 6 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &none               &kp BACKSPACE       &kp H        &kp J  &kp K      &kp L    &lt 2 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &lt 5 MINUS         &kp LS(INT1)        &kp N        &kp M  &kp COMMA  &kp DOT  &lt 6 SINGLE_QUOTE
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                             &kp SLASH
+&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 6 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 2 SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 5 MINUS       &kp LS(INT1)     &kp N      &kp M  &kp COMMA  &kp DOT  &lt 6 SINGLE_QUOTE
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                            &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_1 {
+        layer_1 { // This will be Layer 2 (original layer_1 shifted)
             bindings = <
-&trans  &kp N7        &kp N8        &kp N9        &kp LS(SEMI)                                       &trans         &mkp MB4         &trans    &mkp MB5     &trans
-&kp N0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS             &trans           &kp DELETE  &kp PAGE_UP    &mkp MB1         &mkp MB3  &mkp MB2     &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LS(SINGLE_QUOTE)  &trans           &trans      &kp PAGE_DOWN  &kp LS(LC(TAB))  &trans    &kp LC(TAB)  &trans
-&trans  &trans        &trans        &trans        &trans                &kp LS(MINUS)    &trans      &kp LEFT_WIN                                           &trans
+&trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans
+&kp N0  &kp NUMBER_4    &kp N5          &kp NUMBER_6    &kp MINUS                   &trans          &kp DELETE &kp PAGE_UP    &mkp MB1          &mkp MB3 &mkp MB2      &trans
+&trans  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp LS(SINGLE_QUOTE)        &trans          &trans     &kp PAGE_DOWN  &kp LS(LC(TAB))   &trans    &kp LC(TAB)  &trans
+&trans  &trans          &trans          &trans          &trans                      &kp LS(MINUS)   &trans     &kp LEFT_WIN                                    &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_2 {
+        layer_2 { // This will be Layer 3 (original layer_2 shifted)
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                            &kp HASH          &kp EXCL   &kp LS(NUMBER_2)      &kp LS(NUMBER_8)       &kp LS(N9)
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans    &kp EQUAL      &kp LS(NUMBER_6)  &kp QMARK  &kp LS(N7)            &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans    &kp DOLLAR     &kp PERCENT       &kp INT1   &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACKET      &kp NUHS
-&trans   &trans   &trans   &trans   &trans   &trans    &kp LS(EQUAL)  &kp LEFT_BRACKET                                                          &kp LS(INT3)
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp HASH          &kp EXCL   &kp LS(NUMBER_2)      &kp LS(NUMBER_8)      &kp LS(N9)
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp EQUAL         &kp LS(NUMBER_6)  &kp QMARK  &kp LS(N7)            &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15 &trans    &kp DOLLAR        &kp PERCENT       &kp INT1   &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACKET      &kp NUHS
+&trans   &trans   &trans   &trans   &trans  &trans    &kp LS(EQUAL)     &kp LEFT_BRACKET                                                     &kp LS(INT3)
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        SNIPE {
+        SNIPE { // This will be Layer 4 (original SNIPE shifted)
             bindings = <
-&kp PRINTSCREEN  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &kp LA(F4)                       &kp HOME      &kp LC(LEFT)  &kp LC(RIGHT)     &kp END        &trans
-&open_notepad    &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans      &trans       &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW      &kp RIGHT      &trans
-&trans           &kp LG(N1)        &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans      &kp LG(L)    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)  &kp LS(RIGHT)  &trans
-&trans           &trans            &trans            &trans            &trans      &trans       &trans  &kp LEFT_GUI                                                 &trans
+&kp PRINTSCREEN  &kp LG(N7)          &kp LG(N8)          &kp LG(N9)          &kp LA(F4)                       &kp HOME    &kp LC(LEFT)  &kp LC(RIGHT)       &kp END          &trans
+&open_notepad    &kp LG(NUMBER_4)    &kp LG(N5)          &kp LG(NUMBER_6)    &trans      &trans          &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW        &kp RIGHT        &trans
+&trans           &kp LG(N1)          &kp LG(NUMBER_2)    &kp LG(NUMBER_3)    &trans      &kp LG(L)       &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)    &kp LS(RIGHT)    &trans
+&trans           &trans              &trans              &trans              &trans      &trans          &trans  &kp LEFT_GUI                                        &trans
             >;
 
             sensor-bindings = <&horizontal_scroll>;
         };
 
-        layer_4 {
+        layer_4 { // This will be Layer 5 (original layer_4 shifted)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0 &to 0  &bt BT_SEL 1 &to 1  &bt BT_SEL 2 &to 1  &bt BT_SEL 3 &to 1  &bt BT_SEL 4 &to 1
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans          &trans          &trans          &trans          &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                          &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_5 {
+        layer_5 { // This will be Layer 6 (original layer_5 shifted)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        MOUSE {
+        MOUSE { // This will be Layer 7 (original MOUSE shifted)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
