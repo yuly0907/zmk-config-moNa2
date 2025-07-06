@@ -83,14 +83,14 @@
 
         QWERTY_US { // Layer 0
             bindings = <
-// Row 0 (QWERTY)
-&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P    &trans
-// Row 1 (ASDF)
+// Row 0 (10 keys)
+&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+// Row 1 (12 keys)
 &kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 4 SEMI // US_SYMBOLS (Layer 4)へ
-// Row 2 (ZXCV)
+// Row 2 (12 keys)
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp UNDER        &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 COLON // layer_5 (空)へ
-// Row 3 (Modifiers + Space/Enter)
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 4 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 4 ENTER                            &kp SLASH
+// Row 3 (12 keys)
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 4 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 4 ENTER  &trans   &trans   &trans   &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -98,14 +98,14 @@
 
         QWERTY_JIS { // Layer 1
             bindings = <
-// Row 0 (QWERTY)
-&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P    &trans
-// Row 1 (ASDF)
+// Row 0 (10 keys)
+&kp Q             &kp W         &kp E         &kp R           &kp T                             &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+// Row 1 (12 keys)
 &kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 3 SEMI // JIS_SYMBOLS (Layer 3)へ
-// Row 2 (ZXCV)
+// Row 2 (12 keys)
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp LS(INT1)     &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 SINGLE_QUOTE // layer_5 (空)へ
-// Row 3 (Modifiers + Space/Enter)
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 3 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 3 ENTER                            &kp SLASH
+// Row 3 (12 keys)
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 3 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 3 ENTER  &trans   &trans   &trans   &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -113,14 +113,14 @@
 
         layer_1 { // Layer 2 (元の layer_1)
             bindings = <
-// Row 0
-&trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans &trans
-// Row 1
+// Row 0 (10 keys)
+&trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans
+// Row 1 (12 keys)
 &kp N0  &kp NUMBER_4    &kp N5          &kp NUMBER_6    &kp MINUS                   &trans          &kp DELETE &kp PAGE_UP    &mkp MB1          &mkp MB3 &mkp MB2      &trans
-// Row 2
+// Row 2 (12 keys)
 &trans  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp LS(SINGLE_QUOTE)        &trans          &trans     &kp PAGE_DOWN  &kp LS(LC(TAB))   &trans    &kp LC(TAB)  &trans
-// Row 3
-&trans  &trans          &trans          &trans          &trans                      &kp LS(MINUS)   &trans     &kp LEFT_WIN                                    &trans &trans
+// Row 3 (12 keys) - Original had only 9, padded to 12.
+&trans  &trans          &trans          &trans          &trans                      &kp LS(MINUS)   &trans     &kp LEFT_WIN          &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -128,14 +128,14 @@
 
         JIS_SYMBOLS { // Layer 3 (元の layer_2 をリネームし、画像に合わせて修正)
             bindings = <
-// Row 0 (F1-F5 on left, # ! " ( ) on right) - 12キー
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans         &kp HASH          &kp EXCL   &kp DQT           &kp LS(NUMBER_8)      &kp LS(N9)    &trans
-// Row 1 (F6-F10 on left, ^ & ? ' { } on right) - 12キー
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans         &kp CARET         &kp LS(N7) &kp QMARK         &kp SINGLE_QUOTE      &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET)
-// Row 2 (F11-F15 on left, % \ [ ] _ \ on right) - 12キー
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans         &kp PERCENT       &kp INT1   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LS(MINUS) &kp NUHS
-// Row 3 (Bottom row modifiers, ~ @ | on right) - 12キー
-&trans   &trans   &trans   &trans   &trans   &trans         &kp TILDE         &kp AT     &trans            &trans                &trans        &kp LS(INT3)
+// Row 0 (10 keys): F1-F5 on left, # ! " ( ) on right
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5    &kp HASH          &kp EXCL   &kp DQT           &kp LS(NUMBER_8)      &kp LS(N9)
+// Row 1 (12 keys): F6-F9 on left, ^ & ? ' {} {} on right (with trans/F10 in between)
+&trans   &trans   &kp F6   &kp F7   &kp F8    &kp F9            &kp CARET         &kp LS(N7) &kp QMARK         &kp SINGLE_QUOTE      &kp LS(LEFT_BRACKET) &kp F10 // F10 is at the far right
+// Row 2 (12 keys): F11-F14 on left, % \ [ ] _ \ on right (with trans/F15 in between)
+&kp NUHS &trans   &kp F11  &kp F12  &kp F13   &kp F14           &kp PERCENT       &kp INT1   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LS(MINUS) &kp F15 // F15 is at the far right
+// Row 3 (12 keys): Thumb cluster symbols, ~ @ | on right
+&kp N0   &kp LEFT_BRACKET &trans   &trans   &trans   &trans    &kp TILDE         &kp AT     &trans            &trans                &trans        &kp LS(INT3) // N0 and LEFT_BRACKET are thumb keys
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -143,24 +143,28 @@
 
         US_SYMBOLS { // Layer 4 (新しく作成したUS記号レイヤー)
             bindings = <
-// Row 0: F1-F5 on left, then standard US shifted top row digits - 12キー
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans         &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5)    &kp LS(N6) // ! @ # $ % ^
-// Row 1: F6-F10 on left, then standard US shifted home row - 12キー
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans         &kp LS(N7)        &kp LS(N8)  &kp LS(N9)        &kp LS(N0)        &kp LS(MINUS) &kp LS(EQUAL) // & * ( ) _ +
-// Row 2: F11-F15 on left, then standard US shifted bottom alphanumeric row and right modifiers - 12キー
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans         &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LS(BACKSLASH) &kp LS(SEMI) &kp LS(SINGLE_QUOTE) &kp LS(COMMA) // { } | : " <
-// Row 3: Bottom row modifiers, then more standard US shifted symbols - 12キー
-&trans   &trans   &trans   &trans   &trans   &trans         &kp LS(DOT)       &kp LS(SLASH)     &kp LS(GRAVE)     &trans            &trans        &trans // > ? ~
+// Row 0 (10 keys): F1-F5 on left, then standard US shifted top row digits
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5    &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5) // ! @ # $ %
+// Row 1 (12 keys): F6-F10 on left, then standard US shifted home row
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &trans            &kp LS(N6)        &kp LS(N7)  &kp LS(N8)        &kp LS(N9)        &kp LS(N0) &kp LS(MINUS) // ^ & * ( ) _
+// Row 2 (12 keys): F11-F15 on left, then standard US shifted bottom alphanumeric row and right modifiers
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15   &trans            &kp LS(EQUAL)     &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LS(BACKSLASH) &kp LS(SEMI) &kp LS(SINGLE_QUOTE) // + { } | : "
+// Row 3 (12 keys): Bottom row modifiers, then more standard US shifted symbols
+&trans   &trans   &trans   &trans   &trans    &trans            &kp LS(COMMA)     &kp LS(DOT)       &kp LS(SLASH)     &kp LS(GRAVE)     &trans        &trans // < > ? ~
             >;
             sensor-bindings = <&scroll_up_down>;
         };
 
         SNIPE { // Layer 5 (元の SNIPE)
             bindings = <
+// Row 0 (10 keys)
 &kp PRINTSCREEN  &kp LG(N7)          &kp LG(N8)          &kp LG(N9)          &kp LA(F4)                       &kp HOME    &kp LC(LEFT)  &kp LC(RIGHT)       &kp END          &trans
+// Row 1 (12 keys)
 &open_notepad    &kp LG(NUMBER_4)    &kp LG(N5)          &kp LG(NUMBER_6)    &trans      &trans          &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW        &kp RIGHT        &trans
+// Row 2 (12 keys)
 &trans           &kp LG(N1)          &kp LG(NUMBER_2)    &kp LG(NUMBER_3)    &trans      &kp LG(L)       &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP_ARROW)    &kp LS(RIGHT)    &trans
-&trans           &trans              &trans              &trans              &trans      &trans          &trans  &kp LEFT_GUI                                        &trans
+// Row 3 (12 keys)
+&trans           &trans              &trans              &trans              &trans      &trans          &trans  &kp LEFT_GUI          &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&horizontal_scroll>;
@@ -168,10 +172,14 @@
 
         layer_4 { // Layer 6 (元の layer_4 - Bluetooth制御)
             bindings = <
+// Row 0 (10 keys)
 &trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0 &to 0  &bt BT_SEL 1 &to 1  &bt BT_SEL 2 &to 1  &bt BT_SEL 3 &to 1  &bt BT_SEL 4 &to 1
+// Row 1 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans          &trans          &trans          &trans          &trans
+// Row 2 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans          &trans          &trans          &trans          &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                          &bt BT_CLR_ALL
+// Row 3 (12 keys)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                          &bt BT_CLR_ALL &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -179,10 +187,14 @@
 
         layer_5 { // Layer 7 (元の layer_5 - 空のレイヤー)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans &trans
+// Row 0 (10 keys)
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans
+// Row 1 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans &trans
+// Row 2 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans
+// Row 3 (12 keys)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -190,10 +202,14 @@
 
         MOUSE { // Layer 8 (元の MOUSE)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans &trans
+// Row 0 (10 keys)
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans
+// Row 1 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans &trans
+// Row 2 (12 keys)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans    &trans    &trans    &trans &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans
+// Row 3 (12 keys)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
