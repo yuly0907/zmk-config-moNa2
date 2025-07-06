@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define SNIPE 3
+#define SNIPE 5 // レイヤー番号が変更されたため、5に更新
 
 &mt {
     flavor = "balanced";
@@ -26,6 +26,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
+            // Layer 0 は QWERTY_US で維持されるため、&to 0 は変更なし
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
@@ -53,7 +54,8 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            // Layer 0 は QWERTY_US で維持されるため、&to 0 は変更なし
+            bindings = <&mo 0>, <&to_layer_0>; // &mo にレイヤー番号を追加
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -81,29 +83,29 @@
     keymap {
         compatible = "zmk,keymap";
 
-        QWERTY_US { // This will be Layer 0
+        QWERTY_US { // Layer 0
             bindings = <
-&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 6 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 2 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 5 MINUS       &kp UNDER        &kp N      &kp M  &kp COMMA  &kp DOT  &lt 6 COLON
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                            &kp SLASH
+&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 4 SEMI // US_SYMBOLS (Layer 4)へ
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp UNDER        &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 COLON // layer_5 (空)へ
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 4 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 4 ENTER                            &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        QWERTY_JIS { // This will be Layer 1
+        QWERTY_JIS { // Layer 1
             bindings = <
-&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 6 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 2 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 5 MINUS       &kp LS(INT1)     &kp N      &kp M  &kp COMMA  &kp DOT  &lt 6 SINGLE_QUOTE
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 4 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 2 ENTER                            &kp SLASH
+&kp Q             &kp W         &kp E         &kp R           &kp T                            &kp Y      &kp U  &lt 8 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F           &kp G       &none           &kp BACKSPACE    &kp H      &kp J  &kp K      &kp L    &lt 3 SEMI // JIS_SYMBOLS (Layer 3)へ
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V           &kp B       &lt 6 MINUS       &kp LS(INT1)     &kp N      &kp M  &kp COMMA  &kp DOT  &lt 7 SINGLE_QUOTE // layer_5 (空)へ
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 LANGUAGE_2  &lt 3 SPACE  &lt 6 LANGUAGE_1    &mt LEFT_SHIFT TAB  &lt 3 ENTER                            &kp SLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_1 { // This will be Layer 2 (original layer_1 shifted)
+        layer_1 { // Layer 2 (元の layer_1)
             bindings = <
 &trans  &kp N7          &kp N8          &kp N9          &kp LS(SEMI)                               &trans         &mkp MB4          &trans    &mkp MB5      &trans
 &kp N0  &kp NUMBER_4    &kp N5          &kp NUMBER_6    &kp MINUS                   &trans          &kp DELETE &kp PAGE_UP    &mkp MB1          &mkp MB3 &mkp MB2      &trans
@@ -114,7 +116,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_2 { // This will be Layer 3 (original layer_2 shifted)
+        JIS_SYMBOLS { // Layer 3 (元の layer_2 をリネーム)
             bindings = <
 &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp HASH          &kp EXCL   &kp LS(NUMBER_2)      &kp LS(NUMBER_8)      &kp LS(N9)
 &kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp EQUAL         &kp LS(NUMBER_6)  &kp QMARK  &kp LS(N7)            &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)
@@ -125,7 +127,18 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        SNIPE { // This will be Layer 4 (original SNIPE shifted)
+        US_SYMBOLS { // Layer 4 (新しく作成するUS記号レイヤー)
+            bindings = <
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                &kp LS(N7)        &kp LS(N8)  &kp LS(N9)        &kp LS(N0)        &kp LS(MINUS) // & * ( ) _
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10 &trans    &kp LS(N1)        &kp LS(N2)  &kp LS(N3)        &kp LS(N4)        &kp LS(N5) // ! @ # $ %
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15 &trans    &kp LS(EQUAL)     &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LS(BACKSLASH) &kp LS(SEMI) // + { } | :
+&trans   &trans   &trans   &trans   &trans  &trans    &kp LS(SINGLE_QUOTE) &kp LS(COMMA)     &kp LS(DOT)       &kp LS(SLASH)     &trans // " < > ?
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        SNIPE { // Layer 5 (元の SNIPE, #define SNIPE 3 から 5 に更新)
             bindings = <
 &kp PRINTSCREEN  &kp LG(N7)          &kp LG(N8)          &kp LG(N9)          &kp LA(F4)                       &kp HOME    &kp LC(LEFT)  &kp LC(RIGHT)       &kp END          &trans
 &open_notepad    &kp LG(NUMBER_4)    &kp LG(N5)          &kp LG(NUMBER_6)    &trans      &trans          &trans  &kp LEFT      &kp DOWN      &kp UP_ARROW        &kp RIGHT        &trans
@@ -136,7 +149,7 @@
             sensor-bindings = <&horizontal_scroll>;
         };
 
-        layer_4 { // This will be Layer 5 (original layer_4 shifted)
+        layer_4 { // Layer 6 (元の layer_4 - Bluetooth制御)
             bindings = <
 &trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0 &to 0  &bt BT_SEL 1 &to 1  &bt BT_SEL 2 &to 1  &bt BT_SEL 3 &to 1  &bt BT_SEL 4 &to 1
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans          &trans          &trans          &trans          &trans
@@ -147,7 +160,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_5 { // This will be Layer 6 (original layer_5 shifted)
+        layer_5 { // Layer 7 (元の layer_5 - 空のレイヤー)
             bindings = <
 &trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans  &trans  &trans
@@ -158,7 +171,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        MOUSE { // This will be Layer 7 (original MOUSE shifted)
+        MOUSE { // Layer 8 (元の MOUSE)
             bindings = <
 &trans  &trans  &trans  &trans  &trans                           &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
